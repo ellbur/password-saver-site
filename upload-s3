@@ -1,0 +1,7 @@
+#!/usr/bin/rakudo
+
+# vim: ft=perl6
+
+run <aws s3 sync ./site s3://password-saver.ellbur.com/>;
+run <aws cloudfront create-invalidation --distribution-id E2URCTLAJPRSLG --paths /index.html /style.css /main.js>
+
