@@ -3,48 +3,52 @@
 
 <html>
   <head>
+    <meta charset="utf-8">
     <title>Password Saver</title>
     <script type="text/javascript" src="main.js"></script>
     <link rel="stylesheet" href="style.css"/>
   </head>
   <body>
     
-    <h1>Password Saver</h1>
-    
-    <form id="main-form" method="POST" action="#">
-      <table id="main-table">
-        <tr>
-          <th> Username </th>
-          <td> <input id="username-field" type="text"/> </td>
-        </tr>
-        <tr>
-          <th> Password </th>
-          <td> <input id="password-field" type="password"/> </td>
-        </tr>
-        <tr>
-          <td id="submit-row" colspan="2">
-            <input type="submit" value="Submit"/>
-          </td>
-        </tr>
-      </table>
-    </form>
+    <div id="main">
+      <h1>Password Saver</h1>
+      
+      <form id="main-form" method="POST" action="#">
+        <table id="main-table">
+          <tr>
+            <th> Username </th>
+            <td> <input id="username-field" type="text"/> </td>
+          </tr>
+          <tr>
+            <th> Password </th>
+            <td> <input id="password-field" type="password"/> </td>
+          </tr>
+          <tr>
+            <th> </th>
+            <td id="submit-row">
+              <input type="submit" value="Submit"/>
+            </td>
+          </tr>
+        </table>
+      </form>
 
-    <p id="plain-text-pw-par">
-      <span id="plain-text-pw-field"> </span>
-      <button id="copy-pw-button"><img width="16" height="16" class="copy-icon" src="copy-icon.svg" alt="Copy to Clipboard"/></button>
-      <span id="copy-acknowledgement">
-        ✔️
-      </span>
-    </p>
-    
-    <form id="domain-form" method="POST" action="#">
-      <p>
-        Change domain to
-        <input id="domain-field" type="text"/>
-        .password-saver.ellbur.com
-        <input type="submit" value="Go"/>
+      <p id="plain-text-pw-par">
+        <span id="plain-text-pw-field"> </span>
+        <button id="copy-pw-button"><img width="16" height="16" class="copy-icon" src="copy-icon.svg" alt="Copy to Clipboard"/></button>
+        <span id="copy-acknowledgement">
+          ✔️
+        </span>
       </p>
-    </form>
+      
+      <form id="domain-form" method="POST" action="#">
+        <p>
+          Change domain to
+          <input id="domain-field" type="text"/>
+          .password-saver.ellbur.com
+          <input type="submit" value="Go"/>
+        </p>
+      </form>
+    </div>
   </body>
 </html>
 
