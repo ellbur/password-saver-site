@@ -66,6 +66,16 @@ document.addEventListener("DOMContentLoaded", (_) => {
     return false;
   });
   
+  document.getElementById('shuffle-button').addEventListener('click', (ev) => {
+    ev.preventDefault();
+    
+    const pw = genPassword();
+    plainTextField.textContent = pw;
+    pwField.value = pw;
+    
+    return false;
+  });
+  
   const currentHost = window.location.hostname;
   const suffix = '.password-saver.ellbur.com';
   if (currentHost.endsWith(suffix)) {
