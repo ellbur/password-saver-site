@@ -94,9 +94,14 @@ document.addEventListener("DOMContentLoaded", (_) => {
   const changeDomainForm = document.getElementById('domain-form');
   changeDomainForm.addEventListener('submit', (ev) => {
     ev.preventDefault();
-    const sub = domainField.value;
+    const sub = domainField.value.trim();
     const cleanSub = sub.replace('.', '');
-    window.location = 'https://' + cleanSub + '.password-saver.ellbur.com';
+    if (cleanSub == '') {
+      window.location = 'https://password-saver.ellbur.com';
+    }
+    else {
+      window.location = 'https://' + cleanSub + '.password-saver.ellbur.com';
+    }
     return false;
   })
 });
