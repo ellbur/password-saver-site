@@ -1,15 +1,23 @@
 
 function r(a, b) {
-  return Math.floor((b - a) * Math.random()) + a;
+  var r = new Uint32Array(1);
+  window.crypto.getRandomValues(r);
+  return r % (b - a) + a;
 }
 
 const lc = 'abcdefghijklmnopqrstuvwxyz';
 const uc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const dg = '0123456789'
 
-function rLC() { return lc[r(0, lc.length)]; }
-function rUC() { return uc[r(0, uc.length)]; }
-function rDG() { return dg[r(0, dg.length)]; }
+function pick(arr) {
+  var r = new Uint32Array(1);
+  window.crypto.getRandomValues(r);
+  return arr[r[0] % arr.length];
+}
+
+function rLC() { return pick(lc); }
+function rUC() { return pick(uc); }
+function rDG() { return pick(dg); }
 
 function genPassword() {
   var xs = [ ];
