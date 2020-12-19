@@ -2,7 +2,7 @@
 
 # vim: ft=perl6
 
-run <aws s3 sync ./site s3://password-saver.ellbur.com/>;
-run <aws s3 cp ./site/index.html s3://password-saver.ellbur.com/index.html --metadata-directive REPLACE --content-type>, 'text/html; charset=UTF-8';
-run <aws cloudfront create-invalidation --distribution-id E2URCTLAJPRSLG --paths /index.html /style.css /main.js /copy-icon.svg>
+run <aws s3 sync ./site s3://password-saver.ellbur.com/ --profile pw-saver>;
+run <aws s3 cp ./site/index.html s3://password-saver.ellbur.com/index.html --metadata-directive REPLACE --content-type>, 'text/html; charset=UTF-8', '--profile', 'pw-saver';
+run <aws cloudfront create-invalidation --distribution-id E2URCTLAJPRSLG --paths /index.html /style.css /main.js /copy-icon.svg --profile pw-saver>
 
